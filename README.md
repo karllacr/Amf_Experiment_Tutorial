@@ -37,4 +37,7 @@ O free5gc-compose é uma instalação do core 5g de forma containerizada. Para c
 
 O my5gRANTester irá simular uma RAN 5G. Para instalá-lo faça o download do seguinte diretório contido neste link: https://github.com/my5G/free5gc-my5G-RANTester-docker. Depois vamos entrar no reposítorio e fazer alguma modificações nos arquivos de configuração.
 
-#### a) No arquivo **docker-compose.yaml** mude a tag ***version** para '2.2'
+**a)** No arquivo **docker-compose.yaml** mude a tag *version* para '2.2' e faça com que a tag *name* dentro de *networks* receba o nome da bridge docker que o free5gc-compose criou durante sua instalação. Por fim, salve o arquivo.
+<br>
+**b)**
+
