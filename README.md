@@ -78,3 +78,26 @@ amfif:
 ```
 
 **c)** Dentro da pasta *nf_tester/* altere o arquivo *Dockerfile*. Onde estiver escrito ```git clone --branch v1.0.0 https://github.com/my5G/my5G-RANTester.git \``` deve ser modficado para ```git clone https://github.com/my5G/my5G-RANTester.git```. Por fim, salve o arquivo.
+
+Depois de todas essas configurações, vamos de fato instalar o tester. Para isso dê o seguinte comando para buildar a imagem docker:
+
+```
+docker build -f nf_tester/Dockerfile --tag my5grantester:latest .
+```
+Antes de fazermos o tester rodar, precisamos configurar os dados do UE na interface gráfica.
+
+## Passo 5: Acessando a WebUI e adicionando um UE:
+
+Dentro do VSCode, exporte a porta 5000 e acesse seu localhost nesta porta. Use *admin* e *free5gc* como login e password, respectivamente.
+Adicione um subscriber e verifique se os dados dele são exatamente iguais ao dados contidos no arquivo **tester.yaml**
+Apoś dar criar o UE, feche a página e retorne ao VSCode.
+
+## Passo 6: Startando o RAN Tester
+
+Retorne a pasta do my5gRANTester e de dentro dela dê o seguinte comando para iniciar o container:
+
+```
+docker-compose up -d
+```
+
+
