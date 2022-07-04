@@ -77,3 +77,4 @@ amfif:
   port: 38412
 ```
 
+**c)** Dentro da pasta *nf_tester/* altere o arquivo *Dockerfile*. Onde estiver escrito ```git clone --branch v1.0.0 https://github.com/my5G/my5G-RANTester.git \``` deve ser modficado para ```git clone https://github.com/my5G/my5G-RANTester.git```. Por fim, salve o arquivo.
