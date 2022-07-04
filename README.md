@@ -22,11 +22,19 @@ make
 sudo make install
 ```
 
-Verifique sua instalação com ```lamod | grep gtp```
+Verifique sua instalação com 
+
+```
+lsmod | grep gtp
+```
 
 ## Passo 3: Instalação do Free5g-compose
 
 O free5gc-compose é uma instalação do core 5g de forma containerizada. Para conseguirmos realizá-la, faça o download do repositório contido neste link: https://github.com/free5gc/free5gc-compose e siga as suas instruções.
 
+
 ## Passo 4: Instalação e configuração do my5gRANTester
 
+O my5gRANTester irá simular uma RAN 5G. Para instalá-lo faça o download do seguinte diretório contido neste link: https://github.com/my5G/free5gc-my5G-RANTester-docker. Depois vamos entrar no reposítorio e fazer alguma modificações nos arquivos de configuração.
+
+#### a) No arquivo **docker-compose.yaml** mude a tag ***version** para '2.2'
