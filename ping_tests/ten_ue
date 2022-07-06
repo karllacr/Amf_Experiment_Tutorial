@@ -1,0 +1,8 @@
+#! /bin/bash
+#testing
+
+for counter in {1..255..5}; do echo "ping -c 1 10.0.0.$counter"; done
+ping -c 1 10.0.0.1
+ping -c 1 10.0.0.6
+ping -c 1 10.0.0.11
+ping -c 1 10.0.0.16
