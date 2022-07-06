@@ -8,7 +8,7 @@ Para que o protocolo GTP consiga criar túneis de conexão é necessário o uso 
 uname -r
 ```
 
-Se seu kernel for o mesmo, ou seja, se seu kernel for **5.4.0-65-generic**, prossiga com os passos. Agora, se seu kernel for diferente siga os passos desse link: https://forum.free5gc.org/t/gtp5g-build-failed/57
+Se seu kernel for o mesmo, ou seja, se seu kernel for **5.4.0-65-generic**, ou alguma versão maior que 5.4-0-*-generic, prossiga com os passos. Agora, se seu kernel for diferente ou menos que 5.4 siga os passos desse link: https://forum.free5gc.org/t/gtp5g-build-failed/57
 
 ## Passo 2: Instalação do GTP5G
 
@@ -122,4 +122,4 @@ Agora, faça um ping atráves do túnel com:
 ```
 ping -I uetun1 8.8.8.8
 ```
-
+Se o ping funcionar e conseguir enviar pacotes via túnel, então o nosso experimento funcionou :D
