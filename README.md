@@ -10,7 +10,7 @@ uname -r
 
 Se seu kernel for o mesmo, ou seja, se seu kernel for **5.4.0-65-generic**, ou alguma versão maior que 5.4-0-*-generic, prossiga com os passos. Agora, se seu kernel for diferente ou menos que 5.4 siga os passos desse link: https://forum.free5gc.org/t/gtp5g-build-failed/57
 
-##Passo 2: Instalação Prometheus
+## Passo 2: Instalação Prometheus
 
 Para instalar o Prometheus localmente, siga os passos demostrando no tutorial deste link: https://linoxide.com/how-to-install-prometheus-on-ubuntu/. Ele será usado posteriormente em nosso experimento.
 
@@ -127,3 +127,7 @@ Agora, faça um ping atráves do túnel com:
 ping -I uetun1 8.8.8.8
 ```
 Se o ping funcionar e conseguir enviar pacotes via túnel, então o nosso experimento funcionou :D
+
+## Passo 7: Estabelecendo mais de um túnel de UE:
+
+Em nossos teste será necessário gerar certas cargas e estresses na AMF e para isso precisamos subir e cadastrar mais de um equipamento de usuário (UE). Para isso, precisamos alterar um paramêtro no arquivo
