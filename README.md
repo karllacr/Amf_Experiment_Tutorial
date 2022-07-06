@@ -10,7 +10,11 @@ uname -r
 
 Se seu kernel for o mesmo, ou seja, se seu kernel for **5.4.0-65-generic**, ou alguma versão maior que 5.4-0-*-generic, prossiga com os passos. Agora, se seu kernel for diferente ou menos que 5.4 siga os passos desse link: https://forum.free5gc.org/t/gtp5g-build-failed/57
 
-## Passo 2: Instalação do GTP5G
+##Passo 2: Instalação Prometheus
+
+Para instalar o Prometheus localmente, siga os passos demostrando no tutorial deste link: https://linoxide.com/how-to-install-prometheus-on-ubuntu/. Ele será usado posteriormente em nosso experimento.
+
+## Passo 3: Instalação do GTP5G
 
 Para instalar este módulo de kernel faça o seguint:
 
@@ -33,7 +37,7 @@ lsmod | grep gtp
 O free5gc-compose é uma instalação do core 5g de forma containerizada. Para conseguirmos realizá-la, faça o download do repositório contido neste link: https://github.com/free5gc/free5gc-compose e siga as suas instruções.
 
 
-## Passo 4: Instalação e configuração do my5gRANTester
+## Passo 5: Instalação e configuração do my5gRANTester
 
 O my5gRANTester irá simular uma RAN 5G. Para instalá-lo faça o download do seguinte diretório contido neste link: https://github.com/my5G/free5gc-my5G-RANTester-docker. Depois vamos entrar no reposítorio e fazer alguma modificações nos arquivos de configuração.
 
@@ -86,7 +90,7 @@ docker build -f nf_tester/Dockerfile --tag my5grantester:latest .
 ```
 Antes de fazermos o tester rodar, precisamos configurar os dados do UE na interface gráfica.
 
-## Passo 5: Acessando a WebUI e adicionando um UE:
+## Passo 6: Acessando a WebUI e adicionando um UE:
 
 Dentro do VSCode, exporte a porta 5000 e acesse seu localhost nesta porta. Use *admin* e *free5gc* como login e password, respectivamente.
 Adicione um subscriber e verifique se os dados dele são exatamente iguais ao dados contidos no arquivo **tester.yaml**
