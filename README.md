@@ -92,12 +92,34 @@ Dentro do VSCode, exporte a porta 5000 e acesse seu localhost nesta porta. Use *
 Adicione um subscriber e verifique se os dados dele são exatamente iguais ao dados contidos no arquivo **tester.yaml**
 Apoś dar criar o UE, feche a página e retorne ao VSCode.
 
-## Passo 6: Startando o RAN Tester
+## Passo 6: Inicializar e testar o RAN Tester
 
 Retorne a pasta do my5gRANTester e de dentro dela dê o seguinte comando para iniciar o container:
 
 ```
 docker-compose up -d
 ```
+Cheque se algum container com o nome *my5grantester* foi inicializado e está com o status *Up*:
 
+```
+docker ps -a
+```
+E depois acesse o container com o comando:
+
+```
+docker exec -it my5grantester /bin/bash
+```
+
+Para se certificar de que o experimento está funcionando de forma correta, precisamos verificar se o túnel do UE foi iniciado e se conseguimos pingar na internet através deste túnel que foi criado.
+Assim, uma vez dentro do container use o comando abaixo para chegar as interfaces de rede e a existência do túnel:
+
+```
+ip addr
+```
+Se entre a lista existir uma interface chamada **uetun1** significa que o túnel foi estabelecido.
+Agora, faça um ping atráves do túnel com:
+
+```
+ping -I uetun1 8.8.8.8
+```
 
