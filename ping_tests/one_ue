@@ -1,3 +1,0 @@
-#! /bin/bash
-
-docker exec my5grantester ping -I uetun1 8.8.8.8
