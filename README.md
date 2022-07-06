@@ -130,4 +130,8 @@ Se o ping funcionar e conseguir enviar pacotes via túnel, então o nosso experi
 
 ## Passo 7: Estabelecendo mais de um túnel de UE:
 
-Em nossos teste será necessário gerar certas cargas e estresses na AMF e para isso precisamos subir e cadastrar mais de um equipamento de usuário (UE). Para isso, precisamos alterar um paramêtro no arquivo
+Em nossos teste será necessário gerar certas cargas e estresses na AMF e para isso precisamos subir e cadastrar mais de um equipamento de usuário (UE). Para isso, precisamos alterar um paramêtro no arquivo **docker-compose.yaml** dentro da pasta do *my5grantester/*.
+No local em que estiver escrito ```command: ./app ue``` mude para ```command: ./app load-test -n x``` onde x é o valor de UE's que você deseja subir.
+
+
+
