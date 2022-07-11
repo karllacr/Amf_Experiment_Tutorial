@@ -133,5 +133,16 @@ Se o ping funcionar e conseguir enviar pacotes via túnel, então o nosso experi
 Em nossos teste será necessário gerar certas cargas e estresses na AMF e para isso precisamos subir e cadastrar mais de um equipamento de usuário (UE). Para isso, precisamos alterar um paramêtro no arquivo **docker-compose.yaml** dentro da pasta do *my5grantester/*.
 No local em que estiver escrito ```command: ./app ue``` mude para ```command: ./app load-test -n x``` onde x é o valor de UE's que você deseja subir.
 
+## Passo 8: Docker Stat Exporter
+
+Para exportamos as métricas dos container iremos usar o *docker-stat-exporter* que realiza o scrape de métricas diversas associadas ao comando docker stat, nativo do Docker. Para instalar use o seguinte comando:
+
+```
+docker run -d --restart=always -p 9487:9487 -v /var/run/docker.sock:/var/run/docker.sock wywywywy/docker_stats_exporter:latest
+```
+Ele expõe o serviço na porta 9487 e esse serviço deve ser declarado como um job no arquivo de configuração do Prometheus.
+
+
+
 
 
