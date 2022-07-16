@@ -6,7 +6,7 @@ import time
 
 qtd_ue = int(sys.argv[1])
 
-with open('base.json') as f:
+with open('Amf_Experiment_Tutorial/base.json') as f:
   data_ue = json.load(f)
  
 
