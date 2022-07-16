@@ -1,7 +1,7 @@
 #!bin/bash
 
 QUANTIDADE=$1
-ARQUIVO='docker-compose.yaml'
+ARQUIVO='free5gc-my5G-RANTESTER/docker-compose.yaml'
 VELHASTRING="./app ue"
 SUBSTRING="./app load-test -n "
 NOVASTRING="$SUBSTRING""$QUANTIDADE"
