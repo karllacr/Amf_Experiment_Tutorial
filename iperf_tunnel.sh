@@ -4,12 +4,12 @@ QUANTIDADE=$1
 
 #executar o lado servidor do iperf em background
 
-sudo docker exec -it upf iperf3 -i 5 -s -D
+sudo docker exec -it upf iperf3 -s -D
 
 for i in $(seq $QUANTIDADE)
 do
 #irá executar o iperf através de cada um dos túneis criados
-   docker exec -d my5grantester iperf3 -c <ip_upf> -B 10.60.0.$i 
+   docker exec -d my5grantester iperf3 -c <ip_upf> -t 60 -B 10.60.0.$i 
    echo 'Iperf iniciado no túnel uetun'$i' ...'
 done
 
