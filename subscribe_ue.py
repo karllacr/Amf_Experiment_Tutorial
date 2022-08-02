@@ -9,7 +9,7 @@ qtd_ue = int(sys.argv[1])
 with open('Amf_Experiment_Tutorial/base.json') as f:
   data_ue = json.load(f)
  
-print("Aguarde por alguns segundos...")
+print("AGUARDE POR ALGUNS SEGUNDOS...")
 
   for i in range(1, qtd_ue+1):
     formatted_number = str(i).zfill(10)
@@ -20,4 +20,4 @@ print("Aguarde por alguns segundos...")
     header = {"Token" : "admin", "Content-Type" : "application/json"}
     r = requests.post('http://localhost:5000/api/subscriber/'+plmn_e_ue+'/20893',  data = json.dumps(data_ue), headers=header )
     time.sleep(5)
-    print('UE ' + plmn_e_ue + ' subscribed!' )
+    print('UE ' + plmn_e_ue + ' SUBSCRIBED!' )
