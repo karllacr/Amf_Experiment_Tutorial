@@ -12,7 +12,7 @@ sudo docker exec my5grantester apt-get update && apt-get install iperf3 -y
 for i in $(seq $QUANTIDADE)
 do
 #irá executar o iperf através de cada um dos túneis criados
-   docker exec -d my5grantester iperf3 -c $1 -t 60 -B 10.60.0.$2 
+   sudo docker exec -d my5grantester iperf3 -c $1 -t 60 -B 10.60.0.$2 
    echo 'Iperf iniciado no túnel uetun'$i' ...'
 done
 
