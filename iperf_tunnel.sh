@@ -7,21 +7,24 @@ QUANTIDADE=$2
 
 sudo docker exec upf apt-get install iperf3 -y
 sudo docker exec upf iperf3 -s -D
-sudo docker exec my5grantester apt-get update && apt-get install iperf3 -y
+sudo docker exec my5grantester apt-get update 
+sudo docker exec my5grantester apt-get install iperf3 -y
 
 for i in $(seq $QUANTIDADE)
 do
-#irá executar o iperf através de cada um dos túneis criados
-   sudo docker exec -d my5grantester iperf3 -c $1 -t 60 -B 10.60.0.$2 
-   echo 'Iperf iniciado no túnel uetun'$i' ...'
+
+   sudo docker exec upf iperf3 -s -p 52$QUANTIDADE
+   sudo docker exec -d my5grantester iperf3  --no-delay --client $IP --port 52$2 -t 60 --bind 10.60.0.$2 --interval 0 --parallel 1
+   
+   echo 'IPERF INICIADO NO TÚNEL UETUN'$i' ...'
 done
 
-#monitorar o ping no container e sinalizar quando for finalizado
-echo 'Executando...'
+echo 'EXECUTANDO...'
+
 while : ; do
-    if ! docker exec my5grantester pgrep -x 'iperf' > /dev/null
+    if ! docker exec my5grantester pgrep iperf > /dev/null
     then
-        printf "\nIperf Finalizado!"
+        printf "\nIPERF FINALIZADO!"
         break
     fi
     sleep 2
