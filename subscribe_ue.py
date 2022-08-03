@@ -9,7 +9,6 @@ qtd_ue = int(sys.argv[1])
 with open('Amf_Experiment_Tutorial/base.json') as f:
   data_ue = json.load(f)
  
-print("AGUARDE POR ALGUNS SEGUNDOS...")
 
 for i in range(1, qtd_ue+1):
     formatted_number = str(i).zfill(10)
