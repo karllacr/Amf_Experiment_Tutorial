@@ -2,6 +2,7 @@
 
 IP=$1
 QUANTIDADE=$2
+OUTPUT="$(docker exec my5grantester pgrep iperf)"
 
 #executar o lado servidor do iperf em background
 
@@ -22,10 +23,9 @@ done
 echo 'EXECUTANDO...'
 
 while : ; do
-    if ! docker exec my5grantester pgrep iperf > /dev/null
-    then
-        printf "\nIPERF FINALIZADO!"
-        break
-    fi
+      if ! [[ -n $output ]]
+      then
+          printf "\nIPERF FINALIZADO!"
+      fi
     sleep 2
 done
