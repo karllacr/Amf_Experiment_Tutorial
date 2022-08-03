@@ -11,6 +11,9 @@ sudo docker exec upf iperf3 -s -D > /dev/null 2>&1 &
 sudo docker exec my5grantester apt-get update > /dev/null 2>&1 &
 sudo docker exec my5grantester apt-get install iperf3 -y > /dev/null 2>&1 &
 
+echo "\n VERIFICANDO A EXISTÊNCIA DOS PROGRAMAS NECESSÁRIOS..."
+sleep 6
+
 for i in $(seq $QUANTIDADE)
 do
 
@@ -20,12 +23,12 @@ do
    echo 'IPERF INICIADO NO TÚNEL UETUN'$i' ...'
 done
 
-echo 'EXECUTANDO...'
-
 while : ; do
-      if ! [[ -n $output ]]
+      if  [[ -n $output ]]
       then
-          printf "\nIPERF FINALIZADO!"
+          printf "\nEXECUTANDO..."
+      else 
+          printf "\n'IPERF FINALIZADO!"
       fi
     sleep 2
 done
