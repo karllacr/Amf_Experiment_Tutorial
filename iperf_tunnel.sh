@@ -6,10 +6,10 @@ OUTPUT="$(docker exec my5grantester pgrep iperf)"
 
 #executar o lado servidor do iperf em background
 
-sudo docker exec upf apt-get install iperf3 -y
-sudo docker exec upf iperf3 -s -D
-sudo docker exec my5grantester apt-get update 
-sudo docker exec my5grantester apt-get install iperf3 -y
+sudo docker exec upf apt-get install iperf3 -y > /dev/null 2>&1 &
+sudo docker exec upf iperf3 -s -D > /dev/null 2>&1 &
+sudo docker exec my5grantester apt-get update > /dev/null 2>&1 &
+sudo docker exec my5grantester apt-get install iperf3 -y > /dev/null 2>&1 &
 
 for i in $(seq $QUANTIDADE)
 do
