@@ -11,7 +11,7 @@ with open('Amf_Experiment_Tutorial/base.json') as f:
  
 print("AGUARDE POR ALGUNS SEGUNDOS...")
 
-  for i in range(1, qtd_ue+1):
+for i in range(1, qtd_ue+1):
     formatted_number = str(i).zfill(10)
     plmn_e_ue = "imsi-20893" + formatted_number
     data_ue["ueId"] = plmn_e_ue
