@@ -15,14 +15,18 @@ for i in $(seq $QUANTIDADE)
 do
    docker exec -d my5grantester iperf3  --no-delay --client $IP --port 52$i -t 60 --bind 10.60.0.$i --interval 0 --parallel $QUANTIDADE
    echo 'CLIENTE IPERF INICIADO NO TÚNEL UETUN'$i' ...'
-   sleep 2
+   sleep 1
+done
 
-#while : ; do
-#      if  [[ -n $output ]]
-#      then
-#          printf "IPERF FINALIZADO!"
-#      else 
-#          printf "EXECUTANDO..."
-#      fi
-#    sleep 1
-#done
+while [ 1 ]
+do
+   PROCESS=`docker exec my5grantester pgrep iperf`
+   #echo $PROCESS
+   
+   if [-z "$PROCESS"]
+   then
+      echo "IPERF FINALIZADO!\n"
+   else
+      echo "IPERF EXECUTANDO...\n"
+   fi
+done
