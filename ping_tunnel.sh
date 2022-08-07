@@ -10,7 +10,7 @@ do
 done
 
 #monitorar o ping no container e sinalizar quando for finalizado
-echo 'Executando...'
+echo 'EXECUTANDO...'
 while : ; do
     if ! docker exec my5grantester pgrep -x 'ping' > /dev/null
     then
