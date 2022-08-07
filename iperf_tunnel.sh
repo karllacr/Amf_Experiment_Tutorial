@@ -21,12 +21,12 @@ done
 while [ 1 ]
 do
    PROCESS=`docker exec my5grantester pgrep iperf`
-   #echo $PROCESS
    
-   if [-z "$PROCESS"]
+   if [ "$PROCESS" = "" ]
    then
-      echo "IPERF FINALIZADO!\n"
+      echo "IPERF FINALIZADO!"
+      break
    else
-      echo "IPERF EXECUTANDO...\n"
+      echo "IPERF AINDA EM EXECUÇÃO..."
    fi
 done
