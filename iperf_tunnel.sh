@@ -28,5 +28,6 @@ do
       break
    else
       echo "IPERF AINDA EM EXECUÇÃO..."
+      sleep 2
    fi
 done
