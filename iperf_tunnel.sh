@@ -13,7 +13,7 @@ done
 
 for i in $(seq $QUANTIDADE)
 do
-   docker exec -d my5grantester iperf3  --no-delay --client $IP --port 52$i -t 60 --bind 10.60.0.$i --interval 0 --parallel $QUANTIDADE
+   docker exec -d my5grantester iperf3  --no-delay --client $IP --port 52$i -t 60 --bind 10.60.0.$i --interval 0 --length 200K --parallel $QUANTIDADE
    echo 'CLIENTE IPERF INICIADO NO TÚNEL UETUN'$i' ...'
    sleep 1
 done
