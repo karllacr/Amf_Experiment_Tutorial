@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 qtd_ue = int(sys.argv[1])
+max_subscribing =int(sys.argv[2])
 
 def request(i):
     with open('../Amf_Experiment_Tutorial/base.json') as f:
@@ -24,7 +25,7 @@ def request(i):
 
 
 async def start_async_process():
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=max_subscribing) as executor:
         loop = asyncio.get_event_loop()
         tasks = [
             loop.run_in_executor(executor,request,i)
