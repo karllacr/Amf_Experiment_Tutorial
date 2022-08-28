@@ -12,4 +12,6 @@ RUN go build -o amf_load
 
 VOLUME [ "/workspace/my5G-RANTester/config" ]
 
+COPY exec.sh ./
+RUN chmod +x ./exec.sh
 ENTRYPOINT [ "exec.sh" ]
