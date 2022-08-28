@@ -8,7 +8,7 @@ RUN git clone https://github.com/TheDramaturgy/my5G-RANTester \
 
 WORKDIR /workspace/my5G-RANTester/scripts
 
-RUN go build -o amf_load_test
+RUN go build -o amf_load
 
 VOLUME [ "/workspace/my5G-RANTester/config" ]
 
