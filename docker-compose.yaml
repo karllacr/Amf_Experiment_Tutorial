@@ -1,0 +1,30 @@
+version: '2.2'
+services:
+  my5grantester:
+    build: ./amf_iterative_load/
+    image: my5grantester:latest
+    container_name: my5grantester
+    privileged: true
+    volumes:
+      - ./config/tester.yaml:/workspace/my5G-RANTester/config/config.yml
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - NUM_REQUESTS_START = 50
+      - REQUESTS_INCREMENT = 50
+      - NUM_ITERATIONS = 10
+      - ITERATION_DURATION = 3m
+    networks:
+      default:
+        aliases:
+          - tester.free5gc.org
+    healthcheck:
+      test: /bin/bash -c "ip addr | grep uetun1"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+   default:
+        external:
+            name: "free5gc-compose_privnet"
