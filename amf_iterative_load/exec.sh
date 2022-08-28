@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./amf_load_test
+/workspace/my5G-RANTester/scripts/amf_load
