@@ -14,4 +14,4 @@ VOLUME [ "/workspace/my5G-RANTester/config" ]
 
 COPY exec.sh ./
 RUN chmod +x ./exec.sh
-ENTRYPOINT [ "exec.sh" ]
+ENTRYPOINT [ "/workspace/my5G-RANTester/scripts/exec.sh" ]
