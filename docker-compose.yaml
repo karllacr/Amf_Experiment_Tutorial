@@ -10,10 +10,10 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
-      - NUM_REQUESTS_START = 50
-      - REQUESTS_INCREMENT = 50
-      - NUM_ITERATIONS = 10
-      - ITERATION_DURATION = 3m
+      - NUM_REQUESTS_START=50
+      - REQUESTS_INCREMENT=50
+      - NUM_ITERATIONS=10
+      - ITERATION_DURATION=3m
     networks:
       default:
         aliases:
