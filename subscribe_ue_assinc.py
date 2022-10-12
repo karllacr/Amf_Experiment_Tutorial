@@ -20,7 +20,7 @@ def request(i):
 
     header = {"Token" : "admin", "Content-Type" : "application/json"}
     r = requests.post('http://localhost:5000/api/subscriber/'+plmn_e_ue+'/20893',  data = json.dumps(data_ue), headers=header )
-    time.sleep(30)
+    time.sleep(5)
     print('UE ' + plmn_e_ue + ' SUBSCRIBED!' )
 
 
